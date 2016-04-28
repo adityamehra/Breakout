@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+  <audio id="collision">
+    <source src="audio/paddlehit.mp3" type="audio/mp3">
+  </audio>
+  <audio id="wall-collision">
+    <source src="audio/hit.mp3" type="audio/mp3">
+  </audio>
+  <div id="waitScreen">
+      <img src="images/logo.png" />
+      <div id="createShadow">
+          <button id ="startGame" onclick="startGame()">Play&nbsp;Game</button>
+    				<a href="#scoreModal"><button id = "id-high-scores">High&nbsp;Scores</button></a>
+    				<a href="#helpModal"><button id = "id-help">Help</button></a>
+    				<a href="#aboutModal"><button id = "id-about">About</button></a>
+            <a href="#creditsModal"><button id = "id-credit">Credits</button></a>
+      </div>
+  </div>
+  <div id="game">
+        <div id="left-div">
+            <div>
+              <button onClick="mute();">
+                <img id="mute_unmute" src="images/unmute.png" />
+              </button>
+            </div>
+            <br />
+            <div>
+              <button onClick="pauseGame();">
+                Pause
+              </button>
+            </div>
+        </div>
+        <div id="canvas-div">
+            <canvas id="canvas" width="800" height="650">
+            </canvas>
+
+            <canvas id="counterCanvas" width="800" height="650">
+            </canvas>
+        </div>
+        <div id="right-div">
+          <div>
+            <p>
+              Use LEFT and RIGHT arrow keys or MOUSE to move the paddle.
+            </p>
+            <p>
+              Press ESC to toggle menu.
+            </p>
+          </div>
+          <div style="background: white;  border: 4px inset burlywood;opacity: 0.8; font-weight: bolder;">
+            <h1 style="text-align: center;font-weight: bold;text-decoration: underline;">HighScores</h1>
+            <p id="scoreTable">
+            </p>
+          </div>
+          <div>
+            <button onclick="reset()">Reset&nbsp;scores</button>
+          </div>
+        </div>
+        <div class="clear-both">
+        </div>
+  </div>
+
+  <div id="menu">
+    <div>
+        <p>
+          GAME PAUSED! <br /> Press ESC to continue.
+        </p>
+  			<ul class = "menu">
+          <li><a href=""><button onclick="newGame()">New&nbsp;Game</button></a></li>
+  				<li><a href="#scoreModal"><button id = "id-high-scores">High&nbsp;Scores</button></a></li>
+  				<li><a href="#helpModal"><button id = "id-help">Help</button></a></li>
+  				<li><a href="#aboutModal"><button id = "id-about">About</button></a></li>
+          <li><a href="#creditsModal"><button id = "id-credit">Credits</button></a></li>
+  			</ul>
+  	</div>
+  </div>
+
+  <div id="helpModal" class="modalDialog">
+    	<div>
+    		<h2>Help</h2>
+        <p>
+          Use LEFT and RIGHT arrow keys or MOUSE to move the paddle.
+        </p>
+        <p>
+          Press ESC to toggle menu.
+        </p>
+        <a href="#close" title="Close" class="close">X<a>
+    	</div>
+  </div>
+
+  <div id="aboutModal" class="modalDialog">
+    	<div>
+    		<h2>About</h2>
+    		<p>Breakout is an arcade game developed and published by Atari, Inc.[2] It was conceptualized by Nolan Bushnell and
+           Steve Bristow, influenced by the 1972 Atari arcade game Pong, and built by Steve Wozniak aided by Steve Jobs.
+        </p>
+    		<p>The game was ported to multiple platforms and upgraded to video games such as Super Breakout.
+        In addition, Breakout was the basis and inspiration for certain aspects of the Apple II personal computer.
+        </p>
+        <p>
+          For more info vist:
+          <a href="https://en.wikipedia.org/wiki/Breakout_(video_game)" target="_blank">https://en.wikipedia.org/wiki/Breakout_(video_game)</a>
+        </p>
+        <a href="#close" title="Close" class="close">X<a>
+    	</div>
+  </div>
+
+  <div id="creditsModal" class="modalDialog">
+    	<div>
+    		<h2>Credits</h2>
+    		<p>
+          Created by Aditya Mehra.
+        </p>
+    		<p>
+          Brick and paddle images taken from:
+          <a href="http://unluckystudio.com/game-art-giveaway-6-breakout-sprites-pack/" target="_blank">Unlucky Studio</a>
+        </p>
+        <p>
+          Game code inspired from:
+          <a href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript" target="_blank">Mozilla Developer Network</a>
+        </p>
+        <p>
+          Audio from:
+          <a href="http://www.soundboard.com/sb/sound/346449" target="_blank">Ping Pong Ball Hits</a>
+        </p>
+        <p>
+          Breakout logo from:
+        <a href="http://cooltext.com" target="_blank"><img src="http://cooltext.com/images/ct_pixel.gif" width="80" height="15" alt="Cool Text: Logo and Graphics Generator" border="0" /></a>
+        </p>
+        <a href="#close" title="Close" class="close">X</a>
+    	</div>
+  </div>
+
+  <div id="scoreModal" class="modalDialog">
+      <div>
+          <h1 style="text-align: center;font-weight: bold;text-decoration: underline;">HighScores</h1>
+          <p id="scoreTable2">
+          </p>
+          <a href="#close" title="Close" class="close">X</a>
+          <button onclick="reset()">Reset&nbsp;scores</button>
+      </div>
+  </div>
+
+  <script src="js/ParticleSystem.js"></script>
+  <script src="js/random.js"></script>
+  <script src="js/control.js"></script>
+  <script src="js/ball.js"></script>
+  <script src="js/paddle.js"></script>
+  <script src="js/brickField.js"></script>
+  <script src="js/gameLoop.js"></script>
+  <script src="js/highScores.js"></script>
+
+
+  <script>
+          gameHighScores.persistence.report();
+
+  </script>
+
+</body>
+</html>

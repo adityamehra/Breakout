@@ -1,0 +1,236 @@
+body{
+  background-image:url("../images/bg.jpg");
+  background-size: cover;
+  font-family: fantasy;
+}
+
+p{
+  color: #1A98FE;
+}
+
+#waitScreen{
+  background-image: url("../images/breakout.jpg");
+  width:50%;
+  height:300px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#waitScreen img{
+  display:block;
+  margin: 5% auto;
+}
+
+#waitScreen a{
+  text-decoration: none;
+}
+
+
+#waitScreen button {
+    display: block;
+    margin: 7% auto;
+    width: 100px;
+    height: 50px;
+    background: #48fb47;
+    border: 5px white;
+    opacity: 0.8;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+#waitScreen button:hover{
+  background: #60C1FD;
+}
+
+#createShadow{
+  box-shadow: 1px 2px 4px rgba(255, 255, 255, 1);
+}
+
+#game{
+  display: none;
+}
+
+#left-div{
+  float:left;
+  width:20%;
+}
+
+#left-div button img {
+  width:20px;
+  height:20px;
+}
+
+#left-div button{
+  width:40px;
+  height:40px;
+  background: #1A98FE;
+  border: 5px white;
+  opacity: 1;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+#left-div button:hover{
+  background: #60C1FD;
+}
+
+#canvas-div{
+  position: relative;
+  background-color: rgba(255, 255, 255);
+  width: 800px;
+}
+
+#canvas{
+  position: absolute;
+  z-index: 0;
+  border: 4px dotted white;
+}
+
+#counterCanvas{
+  position: absolute;
+  z-index: 1;
+  border: 4px dotted white;
+}
+
+#right-div{
+  position: relative;
+  float:right;
+  width:15%;
+  color: #48fb47;
+}
+
+#right-div p{
+  text-align: center;
+  font-size: large;
+}
+
+#menu{
+  width: 50%;
+  display: none;
+  z-index: 2;
+  background-color : rgba(255, 255, 255, 0.1);
+  margin: 10% auto;
+}
+
+.clear-both{
+  clear: both;
+}
+
+
+#menu p{
+  text-align: center;
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+#menu ul{
+  text-align: center;
+  list-style: none;
+}
+
+#menu ul li{
+  margin : 5.5% 0;
+}
+
+#menu ul li button{
+  width: 100px;
+  height: 50px;
+  background: #48fb47;
+  border: 5px white;
+  opacity: 0.8;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+#menu ul li button:hover{
+  background: #60C1FD;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: fantasy;;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 5;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #83D6FC;
+	background: -moz-linear-gradient(#83D6FC, #0088FF);
+	background: -webkit-linear-gradient(#83D6FC, #0088FF);
+	background: -o-linear-gradient(#83D6FC, #0088FF);
+}
+
+.modalDialog p {
+  color: black;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #1A98FE; }
+
+
+#scoreModal button{
+      background: #48fb47;
+      position: absolute;
+      right: 175px;
+      text-align: center;
+      top: 440px;
+      width: 90px;
+      height: 35px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: fantasy;
+      font-size: small;
+  }
+
+#scoreModal button:hover{
+  background: #60C1FD;
+}
+
+#scoreTable2{
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bolder;
+}
